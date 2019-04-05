@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -57,5 +58,15 @@ public class EventServiceImpl implements EventService {
     @Override
     public void saveList(List<Event> elementList) {
         eventRepo.saveAll(elementList);
+    }
+
+    @Override
+    public Event getByNameEvent(String name) {
+        return eventRepo.getEventByName(name);
+    }
+
+    @Override
+    public List<Event> getNextEvents(Date to) {
+        return eventRepo.getAllByDateFromAfterOrderByDateFrom(to);
     }
 }

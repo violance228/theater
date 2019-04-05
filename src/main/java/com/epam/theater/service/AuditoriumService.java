@@ -10,4 +10,5 @@ import com.epam.theater.entity.Auditorium;
 
 
 public interface AuditoriumService extends BaseMethods<Auditorium> {
+    Auditorium getByName(Long number);
 }

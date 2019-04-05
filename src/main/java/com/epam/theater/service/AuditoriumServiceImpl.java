@@ -58,4 +58,9 @@ public class AuditoriumServiceImpl implements AuditoriumService {
     public void saveList(List<Auditorium> elementList) {
         auditoriumRepo.saveAll(elementList);
     }
+
+    @Override
+    public Auditorium getByName(Long number) {
+        return auditoriumRepo.getByNumberOfAuditorium(number);
+    }
 }

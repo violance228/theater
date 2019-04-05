@@ -12,4 +12,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface AuditoriumRepo extends JpaRepository<Auditorium, Long> {
+    Auditorium getByNumberOfAuditorium(Long number);
 }
